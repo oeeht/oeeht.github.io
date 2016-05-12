@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!--
+Copyright 2014 Mozilla Foundation
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<html dir="ltr" mozdisallowselectionprint moznomarginboxes>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="google" content="notranslate">
+  <title>Minimal PDF.js</title>
+
+  <style>
+    body {
+      background-color: #E6E6E6;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0;
+      font-family: "Times New Roman";
+      font-size: 16px;
+    }
+
+    #pageContainer{
+      border-width: 1px;
+      border-style: solid;
+      border-color: rgba(0, 0, 0, 0.3);
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    #nav{
+      margin: 20px;
+    }
+
+    input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button { 
+      -webkit-appearance: none; 
+      margin: 0; 
+    }
+
+    input[type="number"] {
+      font-size:16px;
+      font-family: "Times New Roman";
+      width:40px;
+    }
+
+  </style>
+
+  <link rel="stylesheet" href="css/pdf_viewer.css">
+
+  <!-- for legacy browsers -->
+  <script src="js/compatibility.js"></script>
+
+  <script src="build/pdf.js"></script>
+  <script src="js/pdf_viewer.js"></script>
+
+</head>
+
+<body>
+<center>
+
+  <div id="nav">
+    <button id="first"><<</button> <button id="prev"><</button>
+    <button id="next">></button> <button id="last">>></button>
+      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+
+    <span>Page : &nbsp;<span id="page_num"></span> / <span id="page_count"></span></span>
+      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+
+    <button id="zoomOut">-</button> 
+
+    <select id="scale" name="scale">
+      <option value="0.2">20%</option>
+      <option value="0.4">40%</option>
+      <option value="0.6">60%</option>
+      <option value="0.8" selected>80%</option>
+      <option value="1">100%</option>
+      <option value="1.2">120%</option>
+      <option value="1.4">140%</option>
+      <option value="1.6">160%</option>
+      <option value="1.8">180%</option>
+      <option value="2">200%</option>
+    </select> 
+
+    <button id="zoomIn">+</button>
+
+  </div>
+
+  <div id="pageContainer" class="pdfViewer singlePageView"></div>
+
+  <script type="text/javascript" src="js/viewer.js"></script>
+
+</center>
+</body>
+</html>
